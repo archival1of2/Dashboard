@@ -3,26 +3,18 @@ GPQuery\Dashboard
 
 **GPQuery** is a historical motor racing data and statistical analysis web application developed for educational, non-commercial purposes.
 
----
+## Dependencies
 
-## Front-End To-Do:
-
-
----
-
-# Angular Modular Structure
-
-## To-Do:
-
- - [ ] Verify application works as it did before.
- - [ ] Run `git commit` and `git push`.
- - [ ] Rewrite components [in accordance to style guide](https://github.com/johnpapa/angularjs-styleguide#iife).
- - [ ] Verify application is still functioning.
- - [ ] Run `git commit` and `git push`.
- - [ ] Think about a merge ;)
+ - [bower][bower] 
+ - [AngularJS][angular]
+ - [RDash-Angular][rdash-angular]
+ - [Bootstrap][bootstrap]
+ - [Font-Awesome][font-awesome]
+ - [UI-Router][ui-router]
+ - [Angular-nvD3][nvd3]
 
 
-## Proposed
+## Directory Structure
 ```
 app/
 ├── core/                                   --> Core Application Module
@@ -52,24 +44,11 @@ app/
 └── app.routes.js                           --> Application Routes
 ```
 
----
 
-## Back-End To-Do:
-
- - [ ] Integrate [World-Flags-Sprite](https://github.com/lafeber/world-flags-sprite)
- - [ ] Integrate table `countries` MySQL
-
-[site-angular]:http://angularjs.org
-[site-bootstrap]:http://getbootstrap.com/
-[site-angularui]:http://angular-ui.github.io/
-[site-laravel]:http://laravel.com
-[site-eloquent]:http://laravel.com/docs/4.2/eloquent
-[site-ergast]:http://ergast.com/mrd/
-[site-bower]:http://bower.io
-[site-grunt]:http://gruntjs.com
-[site-composer]:http://getcomposer.org
-
-**GPQuery\Dashboard** is the front-end component of **GPQuery**, forked from [RDash-Angular][rdash-angular] and based on the [AngularJS][angular] framework.
-
+[bower]:http://bower.io
 [rdash-angular]:https://github.com/rdash/rdash-angular
 [angular]:http://angularjs.org
+[font-awesome]:http://fortawesome.github.io/Font-Awesome/
+[ui-router]:http://angular-ui.github.io/ui-router/
+[nvd3]:http://krispo.github.io/angular-nvd3/
+[bootstrap]:http://getbootstrap.com
