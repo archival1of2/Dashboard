@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en" ng-app="gp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Dashboard - GPQuery</title>
+
+  <link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="components/rdash-ui/dist/css/rdash.min.css">
+  <link rel="stylesheet" type="text/css" href="components/nvd3/nv.d3.css">
+
+  <!-- Angular Modules -->
+  <script src="components/angular/angular.min.js"></script>
+  <script src="components/angular-cookies/angular-cookies.min.js"></script>
+  <script src="components/angular-resource/angular-resource.min.js"></script>
+
+  <!-- Third Party Modules -->
+  <script src="components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script src="components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="components/d3/d3.js"></script>
+  <script src="components/nvd3/nv.d3.js"></script>
+  <script src="components/angular-nvd3/dist/angular-nvd3.js"></script>
+
+  <!-- Bootstrapping -->
+  <script src="app/app.module.js"></script>
+  <script src="app/app.routes.js"></script>
+
+  <!-- Core Module -->
+  <script src="app/core/core.module.js"></script>
+  <script src="app/core/core.services.js"></script>
+
+  <!-- Layout Modules -->
+  <script src="app/layout/layout.module.js"></script>
+  <script src="app/layout/sidebar.controller.js"></script>
+  <script src="app/layout/statusbar.controller.js"></script>
+  <script src="app/layout/toolbar.controller.js"></script>
+
+  <!-- Query Module -->
+  <script src="app/query/query.module.js"></script>
+  <script src="app/query/race.controllers.js"></script>
+  <script src="app/query/races.controllers.js"></script>
+
+  <!-- RDash Module -->
+  <script src="app/rdash/rdash.module.js"></script>
+  <script src="app/rdash/loading.js"></script>
+  <script src="app/rdash/widget.js"></script>
+  <script src="app/rdash/widget-header.js"></script>
+  <script src="app/rdash/widget-body.js"></script>
+  <script src="app/rdash/widget-footer.js"></script>
+  <script src="app/rdash/widget-thumbnail.js"></script>
+  
+
+</head>
+
+<body ng-controller="SidebarController">
+
+  <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper" ng-include="'app/layout/sidebar.html'">
+    </div>
+    <!-- End Sidebar -->
+
+    <div id="content-wrapper">
+      <div class="page-content">
+
+        <!-- Header Bar -->
+        <div class="row header" ng-include="'app/layout/toolbar.html'">
+        </div>
+        <!-- End Header Bar -->
+
+        <!-- Main Content -->
+        <div ui-view></div>
+        <!-- End Main Content -->
+
+      </div><!-- End Page Content -->
+      
+    </div><!-- End Content Wrapper -->
+
+  </div><!-- End Page Wrapper -->
+
+</body>
+
+</html>

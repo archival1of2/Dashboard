@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-sm-12 col-lg-6" data-ng-controller="RaceListController">
+      <rd-widget>
+        <rd-widget-header icon="fa-search" title="Races">
+          <input type="text" id="raceFilter" data-ng-model="raceFilter" placeholder="Filter Races..." />
+        </rd-widget-header>
+        <rd-widget-body classes="medium no-padding">
+          <div class="table-responsive">
+            <table class="table table-striped table-condensed table-hover">
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Rnd</th>
+                  <th>Race</th>
+                  <th>Circuit</th>
+                  <th>Location</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="race in races | filter: raceFilter | limitTo: raceLimit">
+                  <td>{{race.year}}</td>
+                  <td>{{race.round}}</td>
+                  <td>{{race.name}}</td>
+                  <td>{{race.circuit.name}}</td>
+                  <td>{{race.circuit.location}}, {{race.circuit.country}}</td>
+                  <td><a ui-sref="race({raceId:race.raceId})">Results</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </rd-widget-body>
+      </rd-widget>
+  </div>
+  <div class="col-sm-12 col-lg-6" data-ng-controller="RaceController">
+    <rd-widget>
+      <rd-widget-header icon="fa-list-alt" title="Results">
+        {{race.year}} {{race.name}}
+        <!--{{race.circuit.name}}-->
+        <!--{{race.circuit.location}}, {{race.circuit.country}}-->
+      </rd-widget-header>
+      <rd-widget-body classes="medium no-padding">
+        <div class="table-responsive">
+          <table class="table table-striped table-condensed table-hover">
+            <thead>
+              <tr>
+                <th>Pos</th>
+                <th>Driver</th>
+                <th>Constructor</th>
+                <th>Grid</th>
+                <th>Status</th>
+                <th>Pts</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="result in race.results">
+                <td>{{result.positionText}}</td>
+                <td>{{result.driver.forename}} {{result.driver.surname}}</td>
+                <td>{{result.constructor.name}}</td>
+                <td>{{result.grid}}</td>
+                <td ng-if="result.time">{{result.time}}</td>
+                <td ng-if="!result.time">{{result.status.status}}</td>
+                <td>{{result.points}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </rd-widget-body>
+    </rd-widget>
+  </div>
+</div>
