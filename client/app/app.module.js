@@ -1,7 +1,10 @@
-/**
- * GPQuery Main Application Module Script
- */
+(function() {
+    'use strict';
 
-angular.module('gp', [
-  'gp.core', 'gp.layout', 'gp.query'
-  ]);
+    angular.module('gp', [
+        'gp.core',
+        'gp.layout',
+        'gp.query'
+    ]);
+    
+})();

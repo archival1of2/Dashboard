@@ -2,38 +2,44 @@
  * Sidebar Controller
  */
 
-angular.module('gp.layout')
-    .controller('SidebarController', ['$scope', '$cookieStore', SidebarController]);
+(function() {
+  'use strict';
+  
+    angular.module('gp.layout')
+        .controller('SidebarController', SidebarController);
 
-function SidebarController($scope, $cookieStore) {
-    /**
-     * Sidebar Toggle & Cookie Control
-     */
-    var mobileView = 992;
+    SidebarController.$inject = ['$scope', '$cookieStore'];
 
-    $scope.getWidth = function() {
-        return window.innerWidth;
-    };
+    function SidebarController($scope, $cookieStore) {
+        /**
+         * Sidebar Toggle & Cookie Control
+         */
+        var mobileView = 992;
 
-    $scope.$watch($scope.getWidth, function(newValue, oldValue) {
-        if (newValue >= mobileView) {
-            if (angular.isDefined($cookieStore.get('toggle'))) {
-                $scope.toggle = ! $cookieStore.get('toggle') ? false : true;
+        $scope.getWidth = function() {
+            return window.innerWidth;
+        };
+
+        $scope.$watch($scope.getWidth, function(newValue, oldValue) {
+            if (newValue >= mobileView) {
+                if (angular.isDefined($cookieStore.get('toggle'))) {
+                    $scope.toggle = ! $cookieStore.get('toggle') ? false : true;
+                } else {
+                    $scope.toggle = true;
+                }
             } else {
-                $scope.toggle = true;
+                $scope.toggle = false;
             }
-        } else {
-            $scope.toggle = false;
-        }
 
-    });
+        });
 
-    $scope.toggleSidebar = function() {
-        $scope.toggle = !$scope.toggle;
-        $cookieStore.put('toggle', $scope.toggle);
-    };
+        $scope.toggleSidebar = function() {
+            $scope.toggle = !$scope.toggle;
+            $cookieStore.put('toggle', $scope.toggle);
+        };
 
-    window.onresize = function() {
-        $scope.$apply();
-    };
-}
+        window.onresize = function() {
+            $scope.$apply();
+        };
+    }
+})();

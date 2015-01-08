@@ -1,5 +1,9 @@
-angular.module('gp.query')
-  .controller('RacesController', function($scope, $state, RacesService)  {
+(function() {
+  'use strict';
+
+  angular.module('gp.query')
+  /*
+      .controller('RacesController', function($scope, $state, RacesService)  {
 
     $scope.racesFilter = null;
     $scope.racesLimit = 10;
@@ -13,4 +17,6 @@ angular.module('gp.query')
     }
 
 
-  });
+  })
+*/
+})();

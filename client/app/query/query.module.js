@@ -1,1 +1,6 @@
-angular.module('gp.query', []);
+(function() {
+    'use strict';
+
+    angular.module('gp.query', []);
+
+})();

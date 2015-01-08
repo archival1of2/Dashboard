@@ -1,17 +1,20 @@
-angular.module('gp.query')
+(function() {
+    'use strict';
 
-  .controller('RaceController', function($scope, $stateParams, $state, RaceService)  {
-    $scope.raceId = $stateParams.raceId;
-    // race details
-    $scope.race = RaceService.getRace($stateParams.raceId);
+    angular.module('gp.query')
+        .controller('RaceController', RaceController)
+        .controller('RaceListController', RaceListController);
 
-  })
-  .controller('RaceListController', function($scope, $state, RacesService)  {
+    function RaceController($scope, $stateParams, $state, RaceService) {
+        $scope.raceId = $stateParams.raceId;
+        $scope.race = RaceService.getRace($stateParams.raceId);
+    }
 
-    $scope.raceFilter = null;
-    $scope.raceLimit = 25;
+    function RaceListController($scope, RaceService) {
+        $scope.raceFilter = null;
+        $scope.raceLimit = 25;
+        $scope.races = RaceService.getRaceList();
 
-    // races list
-    $scope.races = RacesService.query();
-
-  });
+    }
+    
+})();

@@ -1,28 +1,58 @@
-angular.module('gp.core')
+(function() {
+    'use strict';
 
-  .factory('RaceService', function($resource) {
+    angular.module('gp.core')
+        .factory('RaceService', RaceService);
 
-    var resource = $resource('../server/index.php/race/:raceId', {raceId: '@raceId'},
-    { query: {method:'GET', isArray:false}});
+    function RaceService($resource) {
+        
+        var baseUrl = '../server/index.php/';
 
-    resource.getRace = function(raceId) {
-      return this.query({raceId: raceId});
+        var service = {
+            getRace: getRace,
+            getRaceList: getRaceList
+        };
+
+        return service;
+
+        function getRace(raceId) {
+            var resource = $resource(baseUrl + 'race/:raceId', {raceId:'@raceId'}, {});
+            return resource.get({raceId:raceId});
+        }
+        function getRaceList() {
+            var resource = $resource(baseUrl + 'races/:year', {year:'@year'}, {});
+            return resource.query();
+        }
+
+
     }
 
-    return resource;
 
-  })
+    /*
+    .factory('RaceService', function($resource) {
 
-  .factory('RacesService', function($resource) {
+        var resource = $resource('../server/index.php/race/:raceId', {raceId: '@raceId'},
+        { query: {method:'GET', isArray:false}});
 
-    var resource = $resource('../server/index.php/races/:year', {year: '@year'},
-    { query: {method: 'GET', isArray:true}});
+        resource.getRace = function(raceId) {
+        return this.get({raceId: raceId});
+        }
 
-    // list all races; allow front-end to filter
-    resource.listRaces = function() {
-      return this.query();
-    }
+        return resource;
 
-    return resource;
+    })
 
-  });
+    .factory('RacesService', function($resource) {
+
+        var resource = $resource('../server/index.php/races/:year', {year: '@year'},
+        { query: {method: 'GET', isArray:true}});
+
+        // list all races; allow front-end to filter
+        resource.listRaces = function() {
+        return this.query();
+        }
+
+        return resource;
+
+    })*/
+})();
