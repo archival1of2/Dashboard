@@ -50,5 +50,5 @@ app/
 [angular]:http://angularjs.org
 [font-awesome]:http://fortawesome.github.io/Font-Awesome/
 [ui-router]:http://angular-ui.github.io/ui-router/
-[nvd3]:http://krispo.github.io/angular-nvd3/
+[nvd3]:https://github.com/nvd3-community/nvd3/
 [bootstrap]:http://getbootstrap.com
