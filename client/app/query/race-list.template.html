@@ -1,0 +1,36 @@
+<div class="col-xs-12">
+    <input type="text" class="form-control" data-ng-model="filter" placeholder="Filter List..." />
+
+</div>
+<div class="col-xs-12">
+  <rd-widget>
+    <rd-widget-header icon="fa-search" title="Races">
+    </rd-widget-header>
+    <rd-widget-body classes="medium no-padding">
+      <div class="table-responsive">
+        <table class="table table-striped table-condensed table-hover">
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Rnd</th>
+              <th>Race</th>
+              <th>Circuit</th>
+              <th>Location</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="race in races | filter: filter | limitTo: raceLimit">
+              <td>{{race.year}}</td>
+              <td>{{race.round}}</td>
+              <td>{{race.name}}</td>
+              <td>{{race.circuit.name}}</td>
+              <td>{{race.circuit.location}}, {{race.circuit.country}}</td>
+              <td><a ui-sref="race({raceId:race.raceId})">Results</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </rd-widget-body>
+  </rd-widget>
+</div>

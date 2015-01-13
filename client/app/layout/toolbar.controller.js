@@ -1,34 +1,37 @@
-/**
- * Toolbar Controller
- *
- * Controls toolbar actions: navigation on left; contextual on right.
- *
- * @see http://www.google.com/design/spec/layout/principles.html#principles-paper-craft
- */
-angular
-    .module('gp.layout')
-    .controller('ToolbarController', ToolbarController);
+(function() {
+    'use strict';
+  
+    angular
+        .module('gp.layout')
+        .controller('ToolbarController', ToolbarController);
 
-function ToolbarController() {
+    ToolbarController.$inject = ['$scope', '$cookieStore'];
 
-  /**
-   * Search Box
-   *
-   * On click, replaces the "Dashboard" filler text with a search box as the
-   * breadcrumbs text below drops away.
-   */
+    function ToolbarController($scope, $cookieStore) {
+        $scope.toggle = false;
 
+        /**
+         * Search Box
+         *
+         * On click, replaces the "Dashboard" filler text with a search box as the
+         * breadcrumbs text below drops away.
+         */
+        function toggleSearch() {
+            $scope.toggle = !$scope.toggle;
+            $cookieStore.put('toggle', $scope.toggle);
+        }
 
-  /**
-   * Collapse Dropdowns
-   */
+    /**
+     * Collapse Dropdowns
+     */
 
-  /**
-   * Breadcrumb Control
-   */
+    /**
+     * Breadcrumb Control
+     */
 
-  /**
-   * Waterfall Toggle
-   */
+    /**
+     * Waterfall Toggle
+     */
+    }
 
-};
+})();

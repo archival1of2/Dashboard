@@ -1,1 +1,7 @@
-angular.module('gp.layout', []);
+
+(function() {
+  'use strict';
+
+  angular.module('gp.layout', []);
+
+})();
