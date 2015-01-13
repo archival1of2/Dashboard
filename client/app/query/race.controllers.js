@@ -11,10 +11,9 @@
     }
 
     function RaceListController($scope, RaceService) {
-        $scope.raceFilter = null;
+        $scope.filter = null;
         $scope.raceLimit = 25;
         $scope.races = RaceService.getRaceList();
-
     }
     
 })();

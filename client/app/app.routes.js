@@ -1,7 +1,7 @@
 /**
  * Application Routes
  *
- * Configure ui-router states
+ * Configures ui-router states
  *
  * @see http://angular-ui.github.io/ui-router/site/#/api/ui.router
  */
@@ -15,14 +15,35 @@
 
     function routeConfig($stateProvider, $urlRouterProvider)  {
       
+      /*
+       *  Invalid/Undefined Redirects
+       */
       $urlRouterProvider
         .otherwise('/');
 
       $stateProvider
+        /*
+         *  Index Redirect
+         */
         .state('index', {
           url: '/',
-          templateUrl: 'assets/templates/dashboard.html'
+          views: {
+            'main': { templateUrl: 'assets/templates/dashboard.html' },
+            'form': { templateUrl: 'app/query/race-list.template.html', controller: 'RaceListController' },
+            'data': { templateUrl: 'app/query/race-detail.template.html', controller: 'RaceController' }
+          }
         })
+        .state('race', {
+          url: '/race/:raceId',
+          views: {
+            'main': { templateUrl: 'assets/templates/dashboard.html' },
+            'form': { templateUrl: 'app/query/race-list.template.html', controller: 'RaceListController' },
+            'data': { templateUrl: 'app/query/race-detail.template.html', controller: 'RaceController' }
+          }
+        })
+
+
+        /*
         .state('tables', {
           url: '/tables',
           templateUrl: 'app/query/race.template.html'
@@ -41,6 +62,6 @@
           templateUrl: "app/query/race.template.html",
           controller: "RaceController"
         })
-          
+        */
     }
 })();
