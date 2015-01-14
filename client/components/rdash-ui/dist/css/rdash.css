@@ -55,22 +55,19 @@
  * Header
  */
 .row.header {
-  height: 48px;
-  background: #22252a;
+  height: 60px;
+  background: #fff;
   margin-bottom: 15px;
 }
 .row.header > div:last-child {
   padding-right: 0;
 }
 .row.header .meta .page {
-  font-size: 18px;
-  font-weight: 800;
-  padding-top: 6px;
-  color: #eee;
+  font-size: 17px;
+  padding-top: 11px;
 }
 .row.header .meta .breadcrumb-links {
   font-size: 10px;
-  color: #aaa;
 }
 .row.header .meta div {
   white-space: nowrap;
@@ -81,71 +78,60 @@
   padding: 18px;
   display: block;
 }
-.row.header .user,
-.row.header .meta {
+.row.header .user {
   min-width: 130px;
 }
-.row.header .user > .item,
-.row.header .meta > .item {
-  width: 54px;
-  height: 48px;
+.row.header .user > .item {
+  width: 65px;
+  height: 60px;
   float: right;
   display: inline-block;
   text-align: center;
   vertical-align: middle;
 }
-.row.header .user > .item a,
-.row.header .meta > .item a {
-  color: #bbb;
+.row.header .user > .item a {
+  color: #919191;
   display: block;
 }
-.row.header .user > .item i,
-.row.header .meta > .item i {
+.row.header .user > .item i {
   font-size: 20px;
-  line-height: 42px;
+  line-height: 55px;
 }
-.row.header .user > .item img,
-.row.header .meta > .item img {
-  width: 36px;
-  height: 36px;
-  margin-top: 2px;
+.row.header .user > .item img {
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
   border-radius: 2px;
 }
-.row.header .user > .item ul.dropdown-menu,
-.row.header .meta > .item ul.dropdown-menu {
+.row.header .user > .item ul.dropdown-menu {
   border-radius: 2px;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
 }
-.row.header .user > .item ul.dropdown-menu .dropdown-header,
-.row.header .meta > .item ul.dropdown-menu .dropdown-header {
+.row.header .user > .item ul.dropdown-menu .dropdown-header {
   text-align: center;
 }
-.row.header .user > .item ul.dropdown-menu li.link,
-.row.header .meta > .item ul.dropdown-menu li.link {
+.row.header .user > .item ul.dropdown-menu li.link {
   text-align: left;
 }
-.row.header .user > .item ul.dropdown-menu li.link a,
-.row.header .meta > .item ul.dropdown-menu li.link a {
+.row.header .user > .item ul.dropdown-menu li.link a {
   padding-left: 7px;
   padding-right: 7px;
 }
-.row.header .user > .item ul.dropdown-menu:before,
-.row.header .meta > .item ul.dropdown-menu:before {
+.row.header .user > .item ul.dropdown-menu:before {
   position: absolute;
   top: -7px;
-  right: 27px;
+  right: 23px;
   display: inline-block;
   border-right: 7px solid transparent;
   border-bottom: 7px solid rgba(0, 0, 0, 0.2);
   border-left: 7px solid transparent;
   content: '';
 }
-.row.header .user > .item ul.dropdown-menu:after,
-.row.header .meta > .item ul.dropdown-menu:after {
+.row.header .user > .item ul.dropdown-menu:after {
   position: absolute;
   top: -6px;
-  right: 28px;
+  right: 24px;
   display: inline-block;
   border-right: 6px solid transparent;
   border-bottom: 6px solid #ffffff;
@@ -197,36 +183,18 @@
   }
 }
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 /* Fonts */
-/*
 @font-face {
   font-family: 'Montserrat';
   src: url('../fonts/montserrat-regular-webfont.eot');
-  src: url('../fonts/montserrat-regular-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/montserrat-regular-webfont.woff') format('woff'),
-       url('../fonts/montserrat-regular-webfont.ttf') format('truetype'),
-       url('../fonts/montserrat-regular-webfont.svg#montserratregular') format('svg');
+  src: url('../fonts/montserrat-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/montserrat-regular-webfont.woff') format('woff'), url('../fonts/montserrat-regular-webfont.ttf') format('truetype'), url('../fonts/montserrat-regular-webfont.svg#montserratregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    @font-face {
-      font-family: 'Montserrat';
-      src: url('../fonts/montserrat-regular-webfont.svg') format('svg');
-    }
-    select {
-      font-family: Arial, Helvetica, sans-serif;
-    }
-}*/
-@font-face {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-}
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat';
+    src: url('../fonts/montserrat-regular-webfont.svg') format('svg');
   }
   select {
     font-family: Arial, Helvetica, sans-serif;
@@ -238,7 +206,7 @@ html {
 }
 body {
   background: #f3f3f3;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Montserrat";
   color: #333333 !important;
 }
 .row {
@@ -294,19 +262,18 @@ div.input-mask {
 /* Sidebar header and footer color */
 /* Sidebar title text colour */
 /* Sidebar menu item hover color */
-/* Sidebar text colours */
 /**
  * Sidebar
  */
 #sidebar-wrapper {
-  background: #383d47;
+  background: #30426a;
 }
 ul.sidebar .sidebar-main a,
 .sidebar-footer,
 ul.sidebar .sidebar-list a:hover,
 #page-wrapper:not(.open) ul.sidebar .sidebar-title.separator {
   /* Sidebar header and footer color */
-  background: #22252a;
+  background: #2d3e63;
 }
 ul.sidebar {
   position: absolute;
@@ -341,10 +308,9 @@ ul.sidebar .sidebar-main .menu-icon {
   font-size: 18px;
   padding-right: 28px;
   line-height: 60px;
-  cursor: pointer;
 }
 ul.sidebar .sidebar-title {
-  color: #7e879a;
+  color: #738bc0;
   font-size: 12px;
   height: 35px;
   line-height: 40px;
@@ -357,12 +323,12 @@ ul.sidebar .sidebar-list {
 ul.sidebar .sidebar-list a {
   text-indent: 25px;
   font-size: 15px;
-  color: #d4d7dd;
+  color: #b2bfdc;
   line-height: 40px;
 }
 ul.sidebar .sidebar-list a:hover {
-  color: #ffffff;
-  border-left: 3px solid #199de8;
+  color: #fff;
+  border-left: 3px solid #e99d1a;
   text-indent: 22px;
 }
 ul.sidebar .sidebar-list a:hover .menu-icon {
@@ -405,12 +371,12 @@ ul.sidebar .sidebar-list .menu-icon {
   text-align: center;
 }
 .sidebar-footer div a {
-  color: #000000;
+  color: #b2bfdc;
   font-size: 12px;
   line-height: 43px;
 }
 .sidebar-footer div a:hover {
-  color: #656e80;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -421,7 +387,6 @@ ul.sidebar .sidebar-list .menu-icon {
 /* Sidebar header and footer color */
 /* Sidebar title text colour */
 /* Sidebar menu item hover color */
-/* Sidebar text colours */
 
 /**
  * Widgets

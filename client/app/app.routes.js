@@ -42,26 +42,5 @@
           }
         })
 
-
-        /*
-        .state('tables', {
-          url: '/tables',
-          templateUrl: 'app/query/race.template.html'
-        })
-        .state('info', {
-          url: '/info',
-          templateUrl: 'assets/templates/info.html'
-        })
-        .state('compare', {
-          url: '/compare',
-          templateUrl: 'assets/templates/compare.html'
-        })
-        // Route - Race Details
-        .state("race", {
-          url: "/race/:raceId",
-          templateUrl: "app/query/race.template.html",
-          controller: "RaceController"
-        })
-        */
     }
 })();
