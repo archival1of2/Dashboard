@@ -1,24 +1,7 @@
-GPQuery
+GPQuery\Dashboard
 =======
 
 **GPQuery** is a historical motor racing data and statistical analysis web application developed for educational, non-commercial purposes.
-
-## Table of Contents
-
- - Overview
-   - Description
-   - Contributors
-   - Meta
- - Features
- - Documentation
- - Contributing
- - Versioning
- - Legal
-   - Copyright
-   - License
-
-========
-
 
 ## Dependencies
 

@@ -20,7 +20,8 @@
             return resource.get({raceId:raceId});
         }
         function getRaceList() {
-            var resource = $resource(baseUrl + 'races/:year', {year:'@year'}, {});
+            var resource = $resource(baseUrl + 'races/:year', {year:'@year'}, 
+                {query: {method:'GET', isArray:true}});
             return resource.query();
         }
 
